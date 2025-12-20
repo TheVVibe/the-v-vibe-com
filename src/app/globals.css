@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@theme {
+  /* Map Tailwind theme tokens to CSS variables */
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-secondary: var(--secondary);
+  --color-purple-accent: var(--purple-accent);
+  --color-border: var(--border);
+
+  --animate-fade-in-up: fade-in-up 0.8s ease-out forwards;
+
+  @keyframes fade-in-up {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Light Theme Variables */
+:root {
+  --background: #ffffff;
+  /* White */
+  --surface: #f1f5f9;
+  /* Slate 100 */
+
+  --foreground: #0f172a;
+  /* Slate 900 */
+  --muted: #64748b;
+  /* Slate 500 */
+
+  --primary: #4f46e5;
+  /* Indigo 600 - slightly darker for contrast on white */
+  --primary-hover: #4338ca;
+  --purple-accent: #9333ea;
+  /* Purple 600 */
+
+  --secondary: #059669;
+  /* Emerald 600 */
+
+  --border: #e2e8f0;
+  /* Slate 200 */
+}
+
+/* Dark Theme Variables */
+.dark {
+  --background: #020617;
+  /* Slate 950 */
+  --surface: #0f172a;
+  /* Slate 900 */
+
+  --foreground: #f8fafc;
+  /* Slate 50 */
+  --muted: #94a3b8;
+  /* Slate 400 */
+
+  --primary: #6366f1;
+  /* Indigo 500 */
+  --primary-hover: #4f46e5;
+  --purple-accent: #a855f7;
+  /* Purple 500 */
+
+  --secondary: #10b981;
+  /* Emerald 500 */
+
+  --border: #1e293b;
+  /* Slate 800 */
+}
+
+/* Base styles */
+@layer base {
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    border-color: var(--border);
+    @apply antialiased transition-colors duration-300;
+    /* Smooth theme transition */
+  }
+}
+
+/* Utilities */
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-linear-to-r from-primary to-purple-accent;
+  }
+
+  .glass-panel {
+    @apply bg-surface/50 backdrop-blur-md border border-border;
+  }
+}
