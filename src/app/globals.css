@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @theme {
   /* Map Tailwind theme tokens to CSS variables */
@@ -36,8 +37,8 @@
 
   --foreground: #0f172a;
   /* Slate 900 */
-  --muted: #64748b;
-  /* Slate 500 */
+  --muted: #475569;
+  /* Slate 600 */
 
   --primary: #4f46e5;
   /* Indigo 600 - slightly darker for contrast on white */

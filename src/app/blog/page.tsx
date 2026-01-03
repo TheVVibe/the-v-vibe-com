@@ -1,9 +1,11 @@
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { blogPosts } from "@/data/blogs";
+import { getAllPosts } from "@/lib/blog";
 
 export default function BlogListing() {
+  const blogPosts = getAllPosts();
+
   return (
     <main className="min-h-screen bg-background text-foreground flex flex-col">
       <Header />
@@ -24,10 +26,17 @@ export default function BlogListing() {
               className="group block bg-surface border border-border rounded-2xl overflow-hidden hover:border-primary transition-colors"
             >
               <div className="aspect-video bg-surface-hover w-full relative">
-                {/* Placeholder for blog image */}
-                <div className="absolute inset-0 flex items-center justify-center text-muted-foreground/30 font-bold text-2xl">
-                  {post.category}
-                </div>
+                {post.image ? (
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                ) : (
+                  <div className="absolute inset-0 flex items-center justify-center text-muted-foreground/30 font-bold text-2xl">
+                    {post.category}
+                  </div>
+                )}
               </div>
               <div className="p-6">
                 <div className="flex items-center gap-2 text-xs font-medium text-primary mb-3">
