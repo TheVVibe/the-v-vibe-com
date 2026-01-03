@@ -8,8 +8,7 @@ interface Product {
   rating: number;
   badge?: string;
   link: string;
-  colorFrom?: string;
-  colorTo?: string;
+  image: string;
 }
 
 interface NicheSectionProps {

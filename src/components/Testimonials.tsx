@@ -3,7 +3,7 @@ export default function Testimonials() {
     {
       name: "Alex Johnson",
       role: "Tech Enthusiast",
-      text: "I found the perfect monitor for my setup thanks to Numero Uno. The detailed comparison was a game changer.",
+      text: "I found the perfect monitor for my setup thanks to TheVVibe.com. The detailed comparison was a game changer.",
       rating: 5,
     },
     {
