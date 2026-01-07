@@ -66,7 +66,7 @@ export default function ProductCard({
             href={link}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 flex justify-center items-center gap-2 bg-primary text-white dark:text-black py-2.5 px-4 rounded-xl text-sm font-semibold hover:bg-primary/90 transition-all hover:scale-[1.02] active:scale-[0.98]"
+            className="flex-1 btn btn-primary"
           >
             Buy Now
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-4 h-4">

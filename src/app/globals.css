@@ -98,4 +98,28 @@
   .glass-panel {
     @apply bg-surface/50 backdrop-blur-md border border-border;
   }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] no-underline whitespace-nowrap;
+    text-decoration: none !important;
+  }
+
+  .btn svg {
+    @apply w-4 h-4;
+    /* Force SVG size */
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white dark:text-black hover:bg-primary/90;
+    box-shadow: none !important;
+    color: white !important;
+    /* Override prose hover color */
+  }
+
+  /* Dark mode override for the text color if needed, though dark:text-black handles it via class */
+  :is(.dark .btn-primary) {
+    color: black !important;
+  }
 }
