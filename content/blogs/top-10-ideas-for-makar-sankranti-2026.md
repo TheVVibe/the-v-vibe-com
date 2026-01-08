@@ -5,6 +5,8 @@ date: "January 03, 2026"
 author: "The V Vibe"  
 category: "Home"
 image: "/static/blogs/sankranti-vaan-2026.png"
+relatedBlogs:
+  - sankranti-style-guide
 ---
 
 ## Celebrate Makar Sankranti with Thoughtful Vaan Ideas!

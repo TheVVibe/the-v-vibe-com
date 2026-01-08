@@ -15,6 +15,7 @@ export interface BlogPost {
   category: string;
   image: string;
   content: string;
+  relatedBlogs?: string[];
 }
 
 export function getPostSlugs() {
@@ -43,6 +44,7 @@ export function getPostBySlug(slug: string): BlogPost {
     author: data.author,
     category: data.category,
     image: data.image,
+    relatedBlogs: data.relatedBlogs || [],
     content,
   };
 }
@@ -55,6 +57,18 @@ export function getAllPosts(): BlogPost[] {
     // Sort posts by date in descending order
     .sort((post1, post2) => (new Date(post1.date) > new Date(post2.date) ? -1 : 1));
   return posts;
+}
+
+export function getRelatedPosts(slugs: string[]): BlogPost[] {
+  return slugs
+    .map((slug) => {
+      try {
+        return getPostBySlug(slug);
+      } catch (e) {
+        return null;
+      }
+    })
+    .filter((post): post is BlogPost => post !== null);
 }
 
 export async function markdownToHtml(markdown: string) {

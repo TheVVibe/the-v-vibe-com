@@ -1,7 +1,8 @@
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { getAllPosts, getPostBySlug, markdownToHtml } from "@/lib/blog";
+import { getAllPosts, getPostBySlug, getRelatedPosts, markdownToHtml } from "@/lib/blog";
+import RelatedBlogs from "@/components/RelatedBlogs";
 
 export async function generateStaticParams() {
   const posts = getAllPosts();
@@ -14,6 +15,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const post = getPostBySlug(slug);
   const content = await markdownToHtml(post.content);
+  const relatedPosts = post.relatedBlogs ? getRelatedPosts(post.relatedBlogs) : [];
 
   return (
     <main className="min-h-screen bg-background text-foreground flex flex-col">
@@ -60,6 +62,8 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           className="prose dark:prose-invert prose-lg max-w-none prose-headings:font-bold prose-headings:text-foreground prose-p:text-muted prose-strong:text-foreground prose-li:text-muted prose-a:text-primary hover:prose-a:text-primary-hover prose-a:font-medium prose-a:no-underline hover:prose-a:underline"
           dangerouslySetInnerHTML={{ __html: content }}
         />
+
+        <RelatedBlogs posts={relatedPosts} />
       </article>
 
       <Footer />
