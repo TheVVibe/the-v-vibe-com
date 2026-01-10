@@ -1,19 +1,19 @@
 export default function Testimonials() {
   const reviews = [
     {
-      name: "Alex Johnson",
+      name: "Atul S",
       role: "Tech Enthusiast",
       text: "I found the perfect monitor for my setup thanks to TheVVibe.com. The detailed comparison was a game changer.",
       rating: 5,
     },
     {
-      name: "Sarah Chen",
+      name: "Yogini C",
       role: "Home Designer",
       text: "The home essentials list is curated perfectly. I bought the coffee maker recommeneded and I love it!",
       rating: 5,
     },
     {
-      name: "Mike Davies",
+      name: "Nilesh G",
       role: "Fitness Coach",
       text: "Honest reviews that actually test the products. Saved me from buying a cheap knockoff.",
       rating: 5,
