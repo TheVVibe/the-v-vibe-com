@@ -3,7 +3,6 @@ import Link from "next/link";
 interface ProductProps {
   title: string;
   description: string;
-  price: string;
   rating: number;
   badge?: string;
   link: string;
@@ -13,7 +12,6 @@ interface ProductProps {
 export default function ProductCard({
   title,
   description,
-  price,
   rating,
   badge,
   link,
@@ -61,7 +59,6 @@ export default function ProductCard({
         <p className="text-sm text-muted-foreground mb-4 line-clamp-2">{description}</p>
 
         <div className="mt-auto flex items-center justify-between gap-4">
-          <span className="text-xl font-bold text-secondary text-nowrap">{price}</span>
           <Link
             href={link}
             target="_blank"
