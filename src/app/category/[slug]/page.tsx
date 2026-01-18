@@ -6,7 +6,7 @@ import NicheSection from "@/components/NicheSection";
 import { techProducts, homeProducts, lifestyleProducts } from "@/data/products";
 
 // Map slugs to category metadata and products
-const categoryMap: Record<string, {
+export const categoryMap: Record<string, {
   title: string;
   description: string;
   products: typeof techProducts
